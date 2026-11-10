@@ -1,4 +1,5 @@
-import { validateLoginFields } from './login-validation.js';
+import { authenticate } from '../auth/auth.js';
+import { INVALID_CREDENTIALS_ERROR, validateLoginFields } from './login-validation.js';
 import { FIELD_MESSAGES, FORM_MESSAGES } from './login-messages.js';
 
 function setFieldState(input, { invalid = false, message = '' } = {}) {
@@ -53,7 +54,19 @@ export function initLoginForm(form) {
     event.preventDefault();
     resetErrors(inputs, alertElement);
 
-    const error = validateLoginFields(readCredentials(inputs));
-    if (error) showError(error, inputs, alertElement);
+    const credentials = readCredentials(inputs);
+    const validationError = validateLoginFields(credentials);
+    if (validationError) {
+      showError(validationError, inputs, alertElement);
+      return;
+    }
+
+    const session = authenticate(credentials);
+    if (!session) {
+      showError(INVALID_CREDENTIALS_ERROR, inputs, alertElement);
+      return;
+    }
+
+    window.location.assign(session.redirectTo);
   });
 }
