@@ -345,3 +345,49 @@ body {
   line-height: 20px;
   color: var(--color-white-secondary);
 }
+
+@media (max-width: 1439.98px) {
+  :root {
+    --form-column-ratio: 53.125%;
+  }
+
+  .login__form-column {
+    padding: var(--space-48) var(--space-64);
+  }
+}
+
+@media (max-width: 1279.98px) {
+  :root {
+    --form-column-ratio: 52.34375%;
+    --content-width: 400px;
+  }
+
+  .login__form-column {
+    padding: var(--space-48);
+  }
+
+  .login-panel {
+    padding: var(--space-48);
+  }
+}
+
+@media (max-width: 1023.98px) {
+  :root {
+    --content-width: 100%;
+  }
+
+  .login__form-column {
+    flex: 1 1 auto;
+    align-items: flex-start;
+    padding: var(--space-32) var(--space-24);
+  }
+
+  .login__title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .login__panel {
+    display: none;
+  }
+}
