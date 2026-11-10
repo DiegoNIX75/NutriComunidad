@@ -41,6 +41,8 @@
           </header>
 
           <form class="login__form" id="login-form" novalidate>
+            <p class="login__alert" role="alert" hidden></p>
+
             <div class="login__fields">
               <div class="field">
                 <label class="field__label" for="login-identifier">Usuario o correo</label>
@@ -51,7 +53,9 @@
                   name="identifier"
                   placeholder="tu.usuario@correo.com"
                   autocomplete="username"
+                  aria-describedby="login-identifier-error"
                 />
+                <p class="field__error" id="login-identifier-error" hidden></p>
               </div>
 
               <div class="field">
@@ -63,7 +67,9 @@
                   name="password"
                   placeholder="••••••••"
                   autocomplete="current-password"
+                  aria-describedby="login-password-error"
                 />
+                <p class="field__error" id="login-password-error" hidden></p>
               </div>
             </div>
 
@@ -106,5 +112,7 @@
         </div>
       </aside>
     </main>
+
+    <script type="module" src="/src/js/login/login-page.js"></script>
   </body>
 </html>

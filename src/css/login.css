@@ -10,6 +10,9 @@
   --color-text-secondary: rgba(52, 58, 64, 0.72);
   --color-text-tertiary: rgba(52, 58, 64, 0.58);
   --color-border-field: rgba(52, 58, 64, 0.22);
+  --color-error: #c62828;
+  --color-error-bg: #fdecea;
+  --color-error-border: rgba(198, 40, 40, 0.24);
 
   --font-heading: "Poppins", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -94,6 +97,20 @@ body {
   flex-direction: column;
   gap: var(--space-32);
   width: 100%;
+}
+
+.login__alert {
+  padding: var(--space-12) var(--space-16);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-sm);
+}
+
+.login__alert[hidden] {
+  display: none;
 }
 
 .login__fields {
@@ -206,6 +223,20 @@ body {
 
 .field__input:focus-visible {
   border-color: var(--color-green-primary);
+}
+
+.field--invalid .field__input {
+  border-color: var(--color-error);
+}
+
+.field__error {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-error);
+}
+
+.field__error[hidden] {
+  display: none;
 }
 
 .button {
