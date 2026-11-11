@@ -119,30 +119,6 @@ body {
   gap: var(--space-20);
 }
 
-.login__actions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
-}
-
-.login__divider {
-  display: flex;
-  align-items: center;
-  gap: var(--space-12);
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--color-text-secondary);
-  white-space: nowrap;
-}
-
-.login__divider::before,
-.login__divider::after {
-  content: "";
-  flex: 1 0 0;
-  height: 1px;
-  background-color: var(--color-border-field);
-}
-
 .login__note {
   font-size: 12px;
   line-height: 16px;
@@ -265,12 +241,6 @@ body {
 .button--primary {
   color: var(--color-white);
   background-color: var(--color-green-primary);
-}
-
-.button--secondary {
-  color: var(--color-green-primary);
-  background-color: var(--color-white);
-  border: 1.5px solid var(--color-green-primary);
 }
 
 .button--ghost {
