@@ -1,0 +1,157 @@
+
+:root {
+  /* Brand colors */
+  --color-green-primary: #279b35;
+  --color-green-fresh: #75c91a;
+  --color-navy: #123d63;
+  --color-white: #ffffff;
+ 
+  /* Surfaces */
+  --color-surface-mint: #e8f3e8;
+  --color-surface-soft: #f3f6f2;
+  --color-green-tint: #e8f3e8;
+  --color-green-dashed: rgba(39, 155, 53, 0.55);
+ 
+  /* Text */
+  --color-text-primary: #343a40;
+  --color-text-secondary: rgba(52, 58, 64, 0.72);
+  --color-text-tertiary: rgba(52, 58, 64, 0.58);
+  --color-border-subtle: rgba(52, 58, 64, 0.16);
+  --color-white-secondary: rgba(255, 255, 255, 0.8);
+ 
+  /* Typography */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+ 
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+ 
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+ 
+  /* Layout */
+  --container-width: 1200px;
+}
+ 
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+ 
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+ 
+ul {
+  padding: 0;
+  list-style: none;
+}
+ 
+/* Shared layout helper */
+.container {
+  width: min(var(--container-width), 100% - 2 * var(--space-24));
+  margin-inline: auto;
+}
+ 
+/* Shared brand logo (same markup as the login page) */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 230px;
+  height: 40px;
+  text-decoration: none;
+}
+ 
+.brand-logo__emblem {
+  position: relative;
+  flex: 0 0 44px;
+  height: 40px;
+  overflow: hidden;
+}
+ 
+.brand-logo__image {
+  position: absolute;
+  top: -26px;
+  left: -20px;
+  width: 83px;
+  height: auto;
+}
+ 
+.brand-logo__name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+  color: var(--color-green-primary);
+  white-space: nowrap;
+}
+ 
+.brand-logo__name-accent {
+  color: var(--color-navy);
+}
+ 
+/* Shared buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-24);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: none;
+  white-space: nowrap;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+ 
+.button:focus-visible {
+  outline: 2px solid var(--color-green-fresh);
+  outline-offset: 2px;
+}
+ 
+.button--primary {
+  color: var(--color-white);
+  background-color: var(--color-green-primary);
+}
+ 
+.button--outline {
+  color: var(--color-green-primary);
+  border-color: var(--color-green-primary);
+}
