@@ -2,6 +2,12 @@ export const LOGIN_ERRORS = Object.freeze({
   EMPTY_FIELDS: 'EMPTY_FIELDS',
   EMPTY_IDENTIFIER: 'EMPTY_IDENTIFIER',
   EMPTY_PASSWORD: 'EMPTY_PASSWORD',
+  INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',
+});
+
+export const INVALID_CREDENTIALS_ERROR = Object.freeze({
+  code: LOGIN_ERRORS.INVALID_CREDENTIALS,
+  fields: ['identifier', 'password'],
 });
 
 const isBlank = (value) => value.trim() === '';
