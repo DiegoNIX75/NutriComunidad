@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Inicia sesión en NutriComunidad para continuar en tu panel." />
+    <title>Iniciar sesión — NutriComunidad</title>
+    <link rel="icon" type="image/png" href="/src/img/Emblema comunitario de alimentos verdes.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+    />
+    <link rel="stylesheet" href="/src/css/login.css" />
+  </head>
+  <body>
+    <main class="login">
+      <section class="login__form-column" aria-labelledby="login-title">
+        <div class="login__content">
+          <a class="button button--ghost" href="/">← Volver a la portada</a>
+
+          <div class="brand-logo">
+            <span class="brand-logo__emblem">
+              <img
+                class="brand-logo__image"
+                src="/src/img/Emblema comunitario de alimentos verdes.png"
+                alt=""
+              />
+            </span>
+            <span class="brand-logo__name">
+              Nutri<span class="brand-logo__name-accent">Comunidad</span>
+            </span>
+          </div>
+
+          <header class="login__header">
+            <h1 class="login__title" id="login-title">Bienvenido de nuevo</h1>
+            <p class="login__subtitle">
+              Conecta · Gestiona · Aprovecha. Ingresa para continuar en tu panel.
+            </p>
+          </header>
+
+          <form class="login__form" id="login-form" novalidate>
+            <div class="login__fields">
+              <div class="field">
+                <label class="field__label" for="login-identifier">Usuario o correo</label>
+                <input
+                  class="field__input"
+                  type="text"
+                  id="login-identifier"
+                  name="identifier"
+                  placeholder="tu.usuario@correo.com"
+                  autocomplete="username"
+                />
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="login-password">Contraseña</label>
+                <input
+                  class="field__input"
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                />
+              </div>
+            </div>
+
+            <div class="login__actions">
+              <button class="button button--primary button--block" type="submit">
+                Iniciar sesión
+              </button>
+              <p class="login__divider">¿No tienes cuenta?</p>
+              <a class="button button--secondary button--block" href="#">Registrarse</a>
+            </div>
+          </form>
+
+          <p class="login__note">
+            Al iniciar sesión te llevaremos al panel de tu rol: administrador, beneficiario,
+            comercio u organización.
+          </p>
+        </div>
+      </section>
+
+      <aside class="login__panel">
+        <div class="login-panel">
+          <span class="badge">Alimento recuperado = plato servido</span>
+          <p class="login-panel__title">
+            Cada alimento que se rescata llega a una familia que lo necesita.
+          </p>
+          <ul class="login-panel__benefits">
+            <li class="benefit-card">
+              <p class="benefit-card__title">Comercios</p>
+              <p class="benefit-card__text">Donan excedentes antes de su fecha límite.</p>
+            </li>
+            <li class="benefit-card">
+              <p class="benefit-card__title">Organizaciones</p>
+              <p class="benefit-card__text">Distribuyen con prioridad a quien más lo necesita.</p>
+            </li>
+            <li class="benefit-card">
+              <p class="benefit-card__title">Familias</p>
+              <p class="benefit-card__text">Reciben apoyos y recetas accesibles.</p>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
