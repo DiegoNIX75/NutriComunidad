@@ -86,10 +86,16 @@
               </p>
             </div>
             <div class="section-header__actions">
-              <button class="button button--secondary" type="button">Agregar producto</button>
-              <button class="button button--primary" type="button">Enviar donación</button>
+              <button class="button button--secondary" type="button" data-action="add-product">
+                Agregar producto
+              </button>
+              <button class="button button--primary" type="button" data-action="send-donation">
+                Enviar donación
+              </button>
             </div>
           </div>
+
+          <p class="commerce-feedback" role="status" aria-live="polite" hidden></p>
 
           <div class="metrics">
             <article class="metric-card">

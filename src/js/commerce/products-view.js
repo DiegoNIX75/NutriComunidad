@@ -1,3 +1,4 @@
+import { COMMERCE_MESSAGES } from './commerce-messages.js';
 import { PRODUCT_STATUSES, QUANTITY_UNIT } from './products-data.js';
 import { calculateTotals, countExpiring } from './products-summary.js';
 
@@ -105,14 +106,37 @@ function renderMetrics(root, products, totals) {
   });
 }
 
+function renderEmptyRow(columnCount) {
+  return `<tr>
+    <td class="products-table__empty" colspan="${columnCount}">${COMMERCE_MESSAGES.emptyTable}</td>
+  </tr>`;
+}
+
+function renderEmptyCard() {
+  return `<li class="product-cards__empty">${COMMERCE_MESSAGES.emptyTable}</li>`;
+}
+
+function renderTable(root, products, totals) {
+  const columnCount = root.querySelectorAll('.products-table__heading').length;
+  const hasProducts = products.length > 0;
+
+  root.querySelector('[data-products-rows]').innerHTML = hasProducts
+    ? products.map(renderTableRow).join('')
+    : renderEmptyRow(columnCount);
+  root.querySelector('[data-products-total]').innerHTML = hasProducts ? renderTableTotal(totals) : '';
+}
+
+function renderCards(root, products, totals) {
+  root.querySelector('[data-product-cards]').innerHTML =
+    products.length > 0
+      ? [...products.map(renderProductCard), renderTotalCard(totals)].join('')
+      : renderEmptyCard();
+}
+
 export function renderProducts(root, products) {
   const totals = calculateTotals(products);
 
-  root.querySelector('[data-products-rows]').innerHTML = products.map(renderTableRow).join('');
-  root.querySelector('[data-products-total]').innerHTML = renderTableTotal(totals);
-  root.querySelector('[data-product-cards]').innerHTML = [
-    ...products.map(renderProductCard),
-    renderTotalCard(totals),
-  ].join('');
+  renderTable(root, products, totals);
+  renderCards(root, products, totals);
   renderMetrics(root, products, totals);
 }
