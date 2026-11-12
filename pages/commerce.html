@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel de comercio de NutriComunidad." />
+    <title>Panel de comercio — NutriComunidad</title>
+    <link rel="icon" type="image/png" href="/src/img/Emblema comunitario de alimentos verdes.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+    />
+    <link rel="stylesheet" href="/src/css/commerce.css" />
+  </head>
+  <body class="commerce">
+    <header class="commerce-navbar">
+      <span class="brand-logo">
+        <img class="brand-logo__image" src="/src/img/LOGO_ARRIBA.jpeg" alt="NutriComunidad" />
+      </span>
+
+      <div class="commerce-navbar__user">
+        <span class="avatar" aria-hidden="true">LH</span>
+        <div class="commerce-navbar__identity">
+          <p class="commerce-navbar__name">Frutería La Huerta</p>
+          <p class="commerce-navbar__role">Comercio</p>
+        </div>
+        <span class="commerce-navbar__divider" aria-hidden="true"></span>
+        <a class="button button--secondary" href="/login.html">Cerrar sesión</a>
+      </div>
+    </header>
+
+    <div class="section-bar">
+      <button
+        class="section-bar__toggle"
+        type="button"
+        aria-label="Abrir menú de secciones"
+        aria-controls="commerce-menu"
+        aria-expanded="false"
+      >
+        <img src="/src/img/icons/menu.svg" alt="" width="24" height="24" />
+      </button>
+      <p class="section-bar__title">Productos a donar</p>
+      <p class="section-bar__count">2 secciones</p>
+    </div>
+
+    <div class="commerce__body">
+      <nav class="commerce-menu" id="commerce-menu" aria-label="Menú principal">
+        <div class="commerce-menu__header">
+          <span class="brand-emblem">
+            <img
+              class="brand-emblem__image"
+              src="/src/img/Emblema comunitario de alimentos verdes.png"
+              alt=""
+            />
+          </span>
+          <div>
+            <p class="commerce-menu__title">Menú principal</p>
+            <p class="commerce-menu__subtitle">Comercio</p>
+          </div>
+        </div>
+
+        <ul class="commerce-menu__list">
+          <li>
+            <button class="menu-item" type="button" data-section="my-commerce">
+              Mi comercio
+            </button>
+          </li>
+          <li>
+            <button class="menu-item menu-item--active" type="button" data-section="products">
+              Productos a donar
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="commerce__content">
+        <section class="commerce-section" id="products" aria-labelledby="products-title">
+          <div class="section-header">
+            <div class="section-header__titles">
+              <h1 class="section-header__title" id="products-title">Productos a donar</h1>
+              <p class="section-header__subtitle">
+                Envíos pendientes con su información nutricional. Los totales se calculan
+                automáticamente.
+              </p>
+            </div>
+            <div class="section-header__actions">
+              <button class="button button--secondary" type="button">Agregar producto</button>
+              <button class="button button--primary" type="button">Enviar donación</button>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <article class="metric-card">
+              <p class="metric-card__label">Productos por enviar</p>
+              <p class="metric-card__value" data-metric="products-count"></p>
+              <p class="metric-card__note">Listos para la próxima entrega</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-card__label">Cantidad total</p>
+              <p class="metric-card__value" data-metric="total-quantity"></p>
+              <p class="metric-card__note">Suma de la columna «Cantidad»</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-card__label">Por vencer</p>
+              <p class="metric-card__value" data-metric="expiring-count"></p>
+              <p class="metric-card__note">Prioriza su envío esta semana</p>
+            </article>
+          </div>
+
+          <div class="products-table">
+            <table class="products-table__table">
+              <thead class="products-table__head">
+                <tr>
+                  <th class="products-table__heading products-table__heading--name">Alimento</th>
+                  <th
+                    class="products-table__heading products-table__heading--description products-table__heading--optional"
+                  >
+                    Descripción
+                  </th>
+                  <th class="products-table__heading products-table__heading--optional">Unidad</th>
+                  <th class="products-table__heading">Calorías</th>
+                  <th class="products-table__heading">Proteínas (g)</th>
+                  <th class="products-table__heading">Carbohidr. (g)</th>
+                  <th class="products-table__heading products-table__heading--optional">
+                    Grasas (g)
+                  </th>
+                  <th class="products-table__heading">Estado</th>
+                  <th class="products-table__heading">Cantidad</th>
+                </tr>
+              </thead>
+              <tbody data-products-rows></tbody>
+              <tfoot class="products-table__foot" data-products-total></tfoot>
+            </table>
+          </div>
+
+          <ul class="product-cards" data-product-cards></ul>
+
+          <p class="commerce-section__note">
+            Valores nutricionales por 100 g o por unidad de medida. Revisa las fechas límite antes de
+            enviar.
+          </p>
+        </section>
+
+        <section class="commerce-section" id="my-commerce" aria-labelledby="my-commerce-title" hidden>
+          <div class="section-header__titles">
+            <h1 class="section-header__title" id="my-commerce-title">Mi comercio</h1>
+            <p class="section-header__subtitle">Información general de tu establecimiento.</p>
+          </div>
+
+          <div class="commerce-profile">
+            <form class="profile-form" novalidate>
+              <h2 class="profile-form__title">Datos del establecimiento</h2>
+
+              <div class="profile-form__row">
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-name">Nombre comercial</label>
+                  <input class="form-field__input" id="commerce-name" type="text" value="Frutería La Huerta" />
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-legal-name">Razón social</label>
+                  <input
+                    class="form-field__input"
+                    id="commerce-legal-name"
+                    type="text"
+                    value="La Huerta S.A. de C.V."
+                  />
+                </div>
+              </div>
+
+              <div class="profile-form__row">
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-type">Tipo de comercio</label>
+                  <select class="form-field__input form-field__input--select" id="commerce-type">
+                    <option selected>Frutería</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-phone">Teléfono</label>
+                  <input class="form-field__input" id="commerce-phone" type="tel" value="55 1234 5678" />
+                </div>
+              </div>
+
+              <div class="profile-form__row">
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-email">Correo</label>
+                  <input
+                    class="form-field__input"
+                    id="commerce-email"
+                    type="email"
+                    value="contacto@lahuerta.mx"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-neighborhood">Colonia</label>
+                  <input class="form-field__input" id="commerce-neighborhood" type="text" value="Centro" />
+                </div>
+              </div>
+
+              <div class="profile-form__row">
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-address">Dirección</label>
+                  <input
+                    class="form-field__input"
+                    id="commerce-address"
+                    type="text"
+                    value="Calle 5 de Mayo 48, local 3"
+                  />
+                </div>
+              </div>
+
+              <div class="profile-form__row">
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-username">Usuario</label>
+                  <input
+                    class="form-field__input form-field__input--locked"
+                    id="commerce-username"
+                    type="text"
+                    value="lahuerta"
+                    disabled
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="commerce-password">Contraseña</label>
+                  <input
+                    class="form-field__input"
+                    id="commerce-password"
+                    type="password"
+                    value="••••••••"
+                    autocomplete="new-password"
+                  />
+                </div>
+              </div>
+
+              <div class="profile-form__actions">
+                <button class="button button--primary" type="button">Guardar cambios</button>
+              </div>
+            </form>
+
+            <aside class="profile-summary">
+              <div class="profile-summary__identity">
+                <span class="avatar avatar--large" aria-hidden="true">LH</span>
+                <div class="profile-summary__name-group">
+                  <p class="profile-summary__name">Frutería La Huerta</p>
+                  <span class="badge badge--success">Comercio verificado</span>
+                </div>
+              </div>
+              <dl class="profile-summary__data">
+                <div class="profile-summary__item">
+                  <dt>Miembro desde</dt>
+                  <dd>Agosto 2026</dd>
+                </div>
+                <div class="profile-summary__item">
+                  <dt>Donaciones realizadas</dt>
+                  <dd>24</dd>
+                </div>
+                <div class="profile-summary__item">
+                  <dt>Organizaciones vinculadas</dt>
+                  <dd>3</dd>
+                </div>
+                <div class="profile-summary__item">
+                  <dt>Desperdicio este mes</dt>
+                  <dd>20 %</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/js/commerce/commerce-page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+export const PRODUCT_STATUSES = Object.freeze({
+  AVAILABLE: 'available',
+  EXPIRING: 'expiring',
+  PENDING: 'pending',
+});
+
+export const QUANTITY_UNIT = 'kg';
+
+export const PRODUCTS = Object.freeze([
+  {
+    name: 'Manzana',
+    description: 'Roja, primera calidad',
+    unit: 'kg',
+    calories: 52,
+    protein: 0.3,
+    carbs: 14,
+    fat: 0.2,
+    status: PRODUCT_STATUSES.AVAILABLE,
+    quantity: 20,
+  },
+  {
+    name: 'Pan de caja',
+    description: 'Integral, 680 g',
+    unit: 'pieza',
+    calories: 250,
+    protein: 9,
+    carbs: 45,
+    fat: 3,
+    status: PRODUCT_STATUSES.EXPIRING,
+    quantity: 12,
+  },
+  {
+    name: 'Zanahoria',
+    description: 'Fresca, sin hojas',
+    unit: 'kg',
+    calories: 41,
+    protein: 0.9,
+    carbs: 10,
+    fat: 0.2,
+    status: PRODUCT_STATUSES.AVAILABLE,
+    quantity: 15,
+  },
+  {
+    name: 'Leche',
+    description: 'Entera, 1 L',
+    unit: 'litro',
+    calories: 61,
+    protein: 3.2,
+    carbs: 4.8,
+    fat: 3.3,
+    status: PRODUCT_STATUSES.EXPIRING,
+    quantity: 10,
+  },
+  {
+    name: 'Frijol',
+    description: 'Negro, a granel',
+    unit: 'kg',
+    calories: 341,
+    protein: 21,
+    carbs: 63,
+    fat: 1.2,
+    status: PRODUCT_STATUSES.PENDING,
+    quantity: 7,
+  },
+]);
