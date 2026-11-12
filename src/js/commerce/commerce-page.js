@@ -1,6 +1,6 @@
-import { PRODUCTS } from './products-data.js';
-import { renderProducts } from './products-view.js';
+import { initProductActions } from './products-actions.js';
+import { createProductsStore } from './products-store.js';
 import { initSectionNavigation } from './section-navigation.js';
 
-renderProducts(document.getElementById('products'), PRODUCTS);
+initProductActions(document.getElementById('products'), createProductsStore());
 initSectionNavigation(document.body);
