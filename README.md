@@ -21,7 +21,14 @@ El sistema permite:
 
 # Lista de pantallas
 
-*(Sección pendiente)*
+![Captura de pantalla](./src/img/ReadmeImg/Portada%20—%20Desktop%201440.jpg)
+![Captura de pantalla](./src/img/ReadmeImg/Login%20—%20Desktop%201440.png)
+![Captura de pantalla](./src/img/ReadmeImg/Comercio%20—%20Mi%20comercio%20—%20Desktop%201440.png)
+![Captura de pantalla](./src/img/ReadmeImg/Comercio%20—%20Productos%20a%20donar%20—%20Desktop%201440.png)
+![Captura de pantalla](./src/img/ReadmeImg/Organización%20—%20Donaciones%20recibidas%20—%20Desktop%201440.png)
+![Captura de pantalla](./src/img/ReadmeImg/Organización%20—%20Mi%20organización%20—%20Desktop%201440.png)
+![Captura de pantalla](./src/img/ReadmeImg/Organización%20—%20Solicitudes%20recibidas%20—%20Desktop%201440.png)
+
 
 
 
