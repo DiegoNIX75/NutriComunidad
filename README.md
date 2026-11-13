@@ -1,4 +1,4 @@
-# Descripción sistema
+# NutriComunidad
 
 **NutriComunidad** es una plataforma web orientada a mitigar el desperdicio de alimentos y combatir la inseguridad alimentaria mediante la conexión entre comercios, productores locales, organizaciones sociales y familias beneficiarias.
 
