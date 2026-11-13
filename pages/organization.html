@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de organización — NutriComunidad</title>
+    <link rel="icon" type="image/png" href="/src/img/Emblema comunitario de alimentos verdes.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+    />
+    <link rel="stylesheet" href="/src/css/organization.css" />
+  </head>
+  <body>
+    <div class="app__shell" hidden>
+      <header class="app-header">
+        <a class="app-header__logo" href="/pages/organization.html" aria-label="NutriComunidad, panel de organización">
+          <img class="app-header__logo-image" src="/src/img/LOGO_ARRIBA.jpeg" alt="Logo de NutriComunidad" />
+        </a>
+        <div class="app-header__user">
+          <span class="avatar" data-bind="org-initials" aria-hidden="true"></span>
+          <div class="app-header__identity">
+            <p class="app-header__name" data-bind="org-name"></p>
+            <p class="app-header__role">Organización social</p>
+          </div>
+          <button class="button button--outline" type="button" id="logout-button">Cerrar sesión</button>
+        </div>
+      </header>
+ 
+      <div class="app__body">
+        <nav class="side-menu" aria-label="Menú principal">
+          <div class="side-menu__heading">
+            <span class="side-menu__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </span>
+            <div>
+              <p class="side-menu__title">Menú principal</p>
+              <p class="side-menu__subtitle">Organización social</p>
+            </div>
+          </div>
+          <ul class="side-menu__list">
+            <li><a class="side-menu__item" href="#profile" data-section="profile">Mi organización</a></li>
+            <li><a class="side-menu__item" href="#requests" data-section="requests">Solicitudes recibidas</a></li>
+            <li><a class="side-menu__item" href="#donations" data-section="donations">Donaciones recibidas</a></li>
+          </ul>
+        </nav>
+ 
+        <main class="app__content">
+          <!-- Mi organización -->
+          <section class="org-section" data-section="profile" aria-labelledby="profile-title">
+            <header class="page-header">
+              <div>
+                <h1 class="page-header__title" id="profile-title">Mi organización</h1>
+                <p class="page-header__subtitle">Datos de la organización y de la persona responsable.</p>
+              </div>
+            </header>
+ 
+            <div class="profile-layout">
+              <form class="card profile-form" id="profile-form" novalidate>
+                <h2 class="card__title">Datos de la organización</h2>
+                <div class="profile-form__grid">
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-name">Nombre de la organización</label>
+                    <input class="form-field__input" id="org-field-name" name="name" type="text" required />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-type">Tipo de organización</label>
+                    <select class="form-field__input" id="org-field-type" name="type"></select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-responsible">Responsable</label>
+                    <input class="form-field__input" id="org-field-responsible" name="responsible" type="text" required />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-phone">Teléfono</label>
+                    <input class="form-field__input" id="org-field-phone" name="phone" type="tel" />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-email">Correo</label>
+                    <input class="form-field__input" id="org-field-email" name="email" type="email" required />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-state">Estado</label>
+                    <select class="form-field__input" id="org-field-state" name="state"></select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-username">Usuario</label>
+                    <input class="form-field__input form-field__input--readonly" id="org-field-username" name="username" type="text" readonly />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="org-field-password">Contraseña</label>
+                    <input class="form-field__input" id="org-field-password" name="password" type="password" placeholder="••••••••" autocomplete="new-password" />
+                  </div>
+                </div>
+                <div class="profile-form__footer">
+                  <p class="feedback feedback--success" data-role="profile-feedback" role="status" hidden></p>
+                  <button class="button button--primary" type="submit">Guardar cambios</button>
+                </div>
+              </form>
+ 
+              <aside class="card org-summary" aria-label="Resumen de la organización">
+                <div class="org-summary__header">
+                  <span class="avatar avatar--large" data-bind="org-initials" aria-hidden="true"></span>
+                  <div>
+                    <p class="org-summary__name" data-bind="org-name"></p>
+                    <span class="badge badge--success">Organización verificada</span>
+                  </div>
+                </div>
+                <dl class="org-summary__list">
+                  <div class="org-summary__row"><dt>Miembro desde</dt><dd data-bind="stat-member-since"></dd></div>
+                  <div class="org-summary__row"><dt>Familias atendidas</dt><dd data-bind="stat-families"></dd></div>
+                  <div class="org-summary__row"><dt>Solicitudes este mes</dt><dd data-bind="stat-requests"></dd></div>
+                  <div class="org-summary__row"><dt>Comercios vinculados</dt><dd data-bind="stat-commerces"></dd></div>
+                </dl>
+              </aside>
+            </div>
+          </section>
+ 
+          <!-- Solicitudes recibidas -->
+          <section class="org-section" data-section="requests" aria-labelledby="requests-title" hidden>
+            <header class="page-header">
+              <div>
+                <h1 class="page-header__title" id="requests-title">Solicitudes recibidas</h1>
+                <p class="page-header__subtitle">Procesa y despacha las solicitudes de las familias según su prioridad.</p>
+              </div>
+              <button class="button button--ghost" type="button" data-action="print">Imprimir datos</button>
+            </header>
+ 
+            <div class="filter-tabs" data-role="request-filters"></div>
+            <p class="feedback feedback--success" data-role="request-feedback" role="status" hidden></p>
+ 
+            <div class="requests-layout">
+              <div class="table-card">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th class="data-table__heading" scope="col">Fecha</th>
+                      <th class="data-table__heading" scope="col">Familia</th>
+                      <th class="data-table__heading" scope="col">Motivo</th>
+                      <th class="data-table__heading" scope="col">Integrantes</th>
+                      <th class="data-table__heading" scope="col">Prioridad</th>
+                    </tr>
+                  </thead>
+                  <tbody data-role="request-rows"></tbody>
+                </table>
+              </div>
+              <aside class="card request-detail" data-role="request-detail" aria-live="polite"></aside>
+            </div>
+          </section>
+ 
+          <!-- Donaciones recibidas -->
+          <section class="org-section" data-section="donations" aria-labelledby="donations-title" hidden>
+            <header class="page-header">
+              <div>
+                <h1 class="page-header__title" id="donations-title">Donaciones recibidas</h1>
+                <p class="page-header__subtitle">Suministros entregados por los comercios vinculados.</p>
+              </div>
+              <div class="page-header__actions">
+                <button class="button button--ghost" type="button" data-action="print">Imprimir datos</button>
+                <button class="button button--primary" type="button" data-action="show-list">Mostrar listado</button>
+              </div>
+            </header>
+ 
+            <div class="metrics-grid" data-role="donation-metrics"></div>
+ 
+            <div class="table-card" data-role="donation-table" tabindex="-1">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th class="data-table__heading" scope="col">Fecha</th>
+                    <th class="data-table__heading" scope="col">Comercio</th>
+                    <th class="data-table__heading" scope="col">Alimento</th>
+                    <th class="data-table__heading" scope="col">Cantidad</th>
+                    <th class="data-table__heading" scope="col">Unidad</th>
+                    <th class="data-table__heading" scope="col">Estado</th>
+                  </tr>
+                </thead>
+                <tbody data-role="donation-rows"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+ 
+    <script type="module" src="/src/js/organization/organization-page.js"></script>
+  </body>
+</html>
+ 

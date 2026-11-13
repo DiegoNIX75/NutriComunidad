@@ -1,13 +1,179 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ordinario</title>
+    <meta
+      name="description"
+      content="NutriComunidad conecta comercios, organizaciones sociales y familias para reducir el desperdicio de alimentos."
+    />
+    <title>NutriComunidad — Conecta, gestiona y aprovecha</title>
+    <link rel="icon" type="image/png" href="/src/img/Emblema comunitario de alimentos verdes.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+    />
+    <link rel="stylesheet" href="/src/css/index.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-header__logo" href="/" aria-label="NutriComunidad, ir a la portada">
+          <img
+            class="site-header__logo-image"
+            src="/src/img/LOGO_ARRIBA.jpeg"
+            alt="Logo de NutriComunidad"
+          />
+        </a>
+        <a class="button button--outline" href="/login.html">Iniciar sesión</a>
+      </div>
+    </header>
+ 
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <span class="hero__tag">Menos desperdicio, más comunidad</span>
+            <h1 class="hero__title" id="hero-title">Conecta, gestiona y aprovecha cada alimento.</h1>
+            <p class="hero__text">
+              NutriComunidad es un sistema inteligente de gestión de inventarios y recomendación de
+              recetas que reduce el desperdicio de alimentos y combate la inseguridad alimentaria,
+              conectando comercios, organizaciones sociales y familias.
+            </p>
+            <a class="button button--primary hero__cta" href="/login.html">Iniciar sesión</a>
+            <p class="hero__hint">
+              ¿Aún no tienes cuenta? Regístrate desde la pantalla de inicio de sesión.
+            </p>
+          </div>
+ 
+          <div class="hero__visual">
+            <img
+              class="hero__image"
+              src="/src/img/LOGO CON TITULO.jpeg"
+              alt="NutriComunidad: logotipo con título"
+            />
+          </div>
+        </div>
+      </section>
+ 
+      <section class="roles" aria-labelledby="roles-title">
+        <div class="container">
+          <header class="section-heading">
+            <h2 class="section-heading__title" id="roles-title">
+              Una red que conecta a toda la comunidad
+            </h2>
+            <p class="section-heading__subtitle">
+              Cada rol tiene un panel pensado para una sola tarea principal.
+            </p>
+          </header>
+ 
+          <ul class="roles__grid">
+            <li class="role-card">
+              <span class="role-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+                  <path d="M9 21v-6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6" />
+                </svg>
+              </span>
+              <h3 class="role-card__title">Comercios y productores</h3>
+              <p class="role-card__text">
+                Registran excedentes e inventarios con su fecha límite de consumo.
+              </p>
+            </li>
+            <li class="role-card">
+              <span class="role-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="8" r="3" />
+                  <path d="M3 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1" />
+                  <circle cx="17" cy="8" r="2.5" />
+                  <path d="M17 13.5a4 4 0 0 1 4 4V19" />
+                </svg>
+              </span>
+              <h3 class="role-card__title">Organizaciones sociales</h3>
+              <p class="role-card__text">Solicitan y distribuyen los alimentos recuperados.</p>
+            </li>
+            <li class="role-card">
+              <span class="role-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                  <path d="M12 17.5s-3.5-2-3.5-4.5a2 2 0 0 1 3.5-1.3A2 2 0 0 1 15.5 13c0 2.5-3.5 4.5-3.5 4.5z" />
+                </svg>
+              </span>
+              <h3 class="role-card__title">Familias beneficiarias</h3>
+              <p class="role-card__text">Reciben apoyos y sugerencias de menús accesibles.</p>
+            </li>
+            <li class="role-card">
+              <span class="role-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </span>
+              <h3 class="role-card__title">Administradores TI</h3>
+              <p class="role-card__text">Gestionan usuarios, catálogos y métricas del sistema.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+ 
+      <section class="credits" aria-label="Créditos del proyecto">
+        <div class="container credits__inner">
+          <div class="credits__column">
+            <h2 class="credits__title">Créditos académicos</h2>
+            <ul class="credits__list">
+              <li class="credit-card">
+                <p class="credit-card__name">Moreno Jiménez, Verónica</p>
+                <p class="credit-card__subject">Fundamentos de Bases de Datos</p>
+              </li>
+              <li class="credit-card">
+                <p class="credit-card__name">Galván Uriza, Antonio</p>
+                <p class="credit-card__subject">
+                  Plataformas Abiertas I y Estructura de Datos Abstractos
+                </p>
+              </li>
+            </ul>
+          </div>
+ 
+          <div class="credits__column">
+            <h2 class="credits__title">Creadores</h2>
+            <ul class="credits__list">
+              <li class="creator-card">
+                <img class="creator-card__avatar" src="/src/img/RYAN GOSLING.jpg" alt="Foto de Gael Alejandro Cerrillo Escanero" />
+                <div class="creator-card__body">
+                  <p class="creator-card__name">Cerrillo Escanero, Gael Alejandro</p>
+                  <span class="creator-card__tag">Vibecoder de confianza</span>
+                  <p class="creator-card__quote">
+                    “La IA lo es todo y soy más máquina que humano.” Dedicado a mi novia virtual:
+                    gracias por nunca dejarme en visto.
+                  </p>
+                </div>
+              </li>
+              <li class="creator-card">
+                <img class="creator-card__avatar" src="/src/img/MORGAN_FREEMAN.jpg" alt="Foto de Diego Alberto Juárez Angulo" />
+                <div class="creator-card__body">
+                  <p class="creator-card__name">Juárez Angulo, Diego Alberto</p>
+                  <span class="creator-card__tag">Revisor de Vibecoder</span>
+                  <p class="creator-card__quote">
+                    Gael suele encontrarse comentarios tipo: “Como lo que te enseñaron en clase” y
+                    “Color parecido al de la UMAD”.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+ 
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p class="site-footer__text">NutriComunidad · Conecta · Gestiona · Aprovecha</p>
+        <p class="site-footer__text site-footer__text--muted">Proyecto académico · 2026</p>
+      </div>
+    </footer>
+ 
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
