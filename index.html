@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NutriComunidad: gestión de inventarios y recomendación de recetas que conecta comercios, organizaciones sociales y familias.">
+    <link rel="icon" type="image/png" href="/src/img/emblema.png">
+    <title>NutriComunidad · Conecta, gestiona y aprovecha</title>
+    <link rel="stylesheet" href="/src/css/normalize.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/portada.css">
+  </head>
+  <body>
+    <header class="portada-encabezado">
+      <div class="contenedor portada-encabezado__contenido">
+        <a class="marca" href="/index.html" aria-label="NutriComunidad, inicio">
+          <img class="marca__emblema" src="/src/img/emblema.png" alt="" width="40" height="40">
+          <span class="marca__nombre">Nutri<span>Comunidad</span></span>
+        </a>
+        <a class="boton boton--contorno" href="/login.html" data-enlace-acceso>Iniciar sesión</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="heroe" aria-labelledby="titulo-heroe">
+        <div class="contenedor heroe__contenido">
+          <div class="heroe__texto">
+            <span class="etiqueta-pastilla">Menos desperdicio, más comunidad</span>
+            <h1 id="titulo-heroe" class="heroe__titulo">Conecta, gestiona y aprovecha cada alimento.</h1>
+            <p class="heroe__descripcion">
+              NutriComunidad es un sistema inteligente de gestión de inventarios y recomendación de recetas que reduce
+              el desperdicio de alimentos y combate la inseguridad alimentaria, conectando comercios, organizaciones
+              sociales y familias.
+            </p>
+            <a class="boton boton--primario" href="/login.html" data-enlace-acceso>Iniciar sesión</a>
+            <p class="heroe__nota">¿Aún no tienes cuenta? Regístrate desde la pantalla de inicio de sesión.</p>
+          </div>
+          <div class="heroe__visual">
+            <!-- Espacio reservado para la imagen principal (ver README, sección "Imágenes"). -->
+            <div class="marcador-imagen heroe__imagen" role="img" aria-label="Imagen ilustrativa de NutriComunidad (pendiente)"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="roles contenedor" aria-labelledby="titulo-roles">
+        <h2 id="titulo-roles" class="seccion-portada__titulo">Una red que conecta a toda la comunidad</h2>
+        <p class="seccion-portada__descripcion">Cada rol tiene un panel pensado para una sola tarea principal.</p>
+        <ul class="roles__lista">
+          <li class="rol-tarjeta">
+            <span class="rol-tarjeta__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l1-5h16l1 5M4 9h16v11H4zM9 20v-6h6v6"/></svg>
+            </span>
+            <h3 class="rol-tarjeta__titulo">Comercios y productores</h3>
+            <p class="rol-tarjeta__texto">Registran excedentes e inventarios con su fecha límite de consumo.</p>
+          </li>
+          <li class="rol-tarjeta">
+            <span class="rol-tarjeta__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1.3-4 3-4.5 1.8.5 3 2.3 3 4.5"/></svg>
+            </span>
+            <h3 class="rol-tarjeta__titulo">Organizaciones sociales</h3>
+            <p class="rol-tarjeta__texto">Solicitan y distribuyen los alimentos recuperados.</p>
+          </li>
+          <li class="rol-tarjeta">
+            <span class="rol-tarjeta__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9H3z"/><path d="M12 17s-3-1.8-3-3.6A1.7 1.7 0 0112 13a1.7 1.7 0 013 .4c0 1.8-3 3.6-3 3.6z"/></svg>
+            </span>
+            <h3 class="rol-tarjeta__titulo">Familias beneficiarias</h3>
+            <p class="rol-tarjeta__texto">Reciben apoyos y sugerencias de menús accesibles.</p>
+          </li>
+          <li class="rol-tarjeta">
+            <span class="rol-tarjeta__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3 class="rol-tarjeta__titulo">Administradores TI</h3>
+            <p class="rol-tarjeta__texto">Gestionan usuarios, catálogos y métricas del sistema.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="creditos" aria-label="Créditos del proyecto">
+        <div class="contenedor creditos__contenido">
+          <div>
+            <h2 class="creditos__titulo">Créditos académicos</h2>
+            <ul class="creditos__lista">
+              <li class="credito">
+                <p class="credito__nombre">Moreno Jiménez, Verónica</p>
+                <p class="credito__materia">Fundamentos de Bases de Datos</p>
+              </li>
+              <li class="credito">
+                <p class="credito__nombre">Galván Uriza, Antonio</p>
+                <p class="credito__materia">Plataformas Abiertas I y Estructura de Datos Abstractos</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="creditos__titulo">Creadores</h2>
+            <ul class="creditos__lista">
+              <li class="credito credito--creador">
+                <!-- Espacio reservado para la foto del creador (ver README, sección "Imágenes"). -->
+                <div class="marcador-imagen credito__foto" role="img" aria-label="Foto de Gael Alejandro Cerrillo Escanero (pendiente)"></div>
+                <div>
+                  <p class="credito__nombre">Cerrillo Escanero, Gael Alejandro</p>
+                  <span class="insignia insignia--navy">Vibecoder de confianza</span>
+                  <p class="credito__cita">“La IA lo es todo y soy más máquina que humano.” Dedicado a mi novia virtual: gracias por nunca dejarme en visto.</p>
+                </div>
+              </li>
+              <li class="credito credito--creador">
+                <div class="marcador-imagen credito__foto" role="img" aria-label="Foto de Diego Alberto Juárez Angulo (pendiente)"></div>
+                <div>
+                  <p class="credito__nombre">Juárez Angulo, Diego Alberto</p>
+                  <span class="insignia insignia--navy">Revisor de Vibecoder</span>
+                  <p class="credito__cita">Gael suele encontrarse comentarios tipo: “Como lo que te enseñaron en clase” y “Color parecido al de la UMAD”.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="portada-pie">
+      <div class="contenedor portada-pie__contenido">
+        <p>NutriComunidad · Conecta · Gestiona · Aprovecha</p>
+        <p>Proyecto académico · 2026</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/js/pages/portada.js"></script>
+  </body>
+</html>
