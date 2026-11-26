@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/img/emblema.png">
+    <title>Iniciar sesión · NutriComunidad</title>
+    <link rel="stylesheet" href="/src/css/normalize.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/acceso.css">
+  </head>
+  <body>
+    <main class="acceso">
+      <section class="acceso__formulario" aria-labelledby="titulo-login">
+        <a class="enlace-volver" href="/index.html">← Volver a la portada</a>
+        <a class="marca" href="/index.html" aria-label="NutriComunidad, inicio">
+          <img class="marca__emblema" src="/src/img/emblema.png" alt="" width="40" height="40">
+          <span class="marca__nombre">Nutri<span>Comunidad</span></span>
+        </a>
+
+        <div>
+          <h1 id="titulo-login" class="acceso__titulo">Bienvenido de nuevo</h1>
+          <p class="acceso__subtitulo">Conecta · Gestiona · Aprovecha. Ingresa para continuar en tu panel.</p>
+        </div>
+
+        <div data-alerta aria-live="polite"></div>
+
+        <form class="acceso__campos" data-formulario-login novalidate>
+          <div class="campo">
+            <label class="campo__etiqueta" for="correo">Correo</label>
+            <input class="entrada" id="correo" name="correo" type="email" autocomplete="email" placeholder="tu.correo@ejemplo.com"
+              required maxlength="150" data-mensaje="Escribe un correo válido.">
+          </div>
+          <div class="campo">
+            <label class="campo__etiqueta" for="contrasena">Contraseña</label>
+            <input class="entrada" id="contrasena" name="contrasena" type="password" autocomplete="current-password"
+              placeholder="••••••••" required data-mensaje="Escribe tu contraseña.">
+          </div>
+          <button class="boton boton--primario boton--bloque" type="submit">Iniciar sesión</button>
+        </form>
+
+        
+
+        <p class="acceso__nota">Al iniciar sesión te llevaremos al panel de tu rol: administrador, beneficiario, comercio u organización.</p>
+      </section>
+
+      <aside class="acceso__lateral" aria-label="Sobre NutriComunidad">
+        <div class="acceso__lateral-contenido">
+          <span class="etiqueta-fresca">Alimento recuperado = plato servido</span>
+          <p class="acceso__frase">Cada alimento que se rescata llega a una familia que lo necesita.</p>
+          <ul class="acceso__tarjetas">
+            <li><strong>Comercios</strong><span>Donan excedentes antes de su fecha límite.</span></li>
+            <li><strong>Organizaciones</strong><span>Distribuyen con prioridad a quien más lo necesita.</span></li>
+            <li><strong>Familias</strong><span>Reciben apoyos y recetas accesibles.</span></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+    <script type="module" src="/src/js/pages/login.js"></script>
+  </body>
+</html>
