@@ -1,0 +1,225 @@
+/* Portada (index.html) */
+.portada-encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-blanco);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.portada-encabezado__contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-16);
+  min-height: var(--alto-header);
+}
+
+.heroe {
+  padding-block: var(--esp-64);
+  background: var(--color-menta);
+}
+
+.heroe__contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: var(--esp-48);
+  align-items: center;
+}
+
+.heroe__texto {
+  display: grid;
+  justify-items: start;
+  gap: var(--esp-20);
+}
+
+.etiqueta-pastilla {
+  padding: var(--esp-4) var(--esp-12);
+  font-size: var(--texto-xs);
+  font-weight: 500;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-full);
+}
+
+.heroe__titulo {
+  font-size: clamp(32px, 5vw, var(--texto-3xl));
+  font-weight: 700;
+}
+
+.heroe__descripcion {
+  max-width: 560px;
+  color: var(--color-texto-2);
+}
+
+.heroe__nota {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-2);
+}
+
+.heroe__visual {
+  padding: var(--esp-32);
+  background: var(--color-blanco);
+  border-radius: var(--radio-lg);
+}
+
+.heroe__imagen {
+  aspect-ratio: 4 / 3;
+}
+
+.roles {
+  padding-block: var(--esp-64);
+}
+
+.seccion-portada__titulo {
+  font-size: var(--texto-xl);
+}
+
+.seccion-portada__descripcion {
+  margin-top: var(--esp-8);
+  color: var(--color-texto-2);
+}
+
+.roles__lista {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--esp-20);
+  margin-top: var(--esp-32);
+}
+
+.rol-tarjeta {
+  display: grid;
+  gap: var(--esp-12);
+  align-content: start;
+  padding: var(--esp-24);
+  background: var(--color-fondo);
+  border-radius: var(--radio-md);
+}
+
+.rol-tarjeta__icono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-verde);
+  background: var(--color-menta);
+  border-radius: var(--radio-sm);
+}
+
+.rol-tarjeta__titulo {
+  font-size: var(--texto-md);
+  font-weight: 500;
+}
+
+.rol-tarjeta__texto {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-2);
+}
+
+.creditos {
+  padding-block: var(--esp-64);
+  background: var(--color-fondo);
+}
+
+.creditos__contenido {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--esp-32);
+}
+
+.creditos__titulo {
+  margin-bottom: var(--esp-16);
+  font-size: var(--texto-lg);
+}
+
+.creditos__lista {
+  display: grid;
+  gap: var(--esp-12);
+}
+
+.credito {
+  padding: var(--esp-16) var(--esp-20);
+  background: var(--color-blanco);
+  border-radius: var(--radio-md);
+}
+
+.credito--creador {
+  display: flex;
+  gap: var(--esp-20);
+  align-items: center;
+}
+
+.credito__foto {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.credito__nombre {
+  font-weight: 500;
+}
+
+.credito__materia {
+  margin-top: var(--esp-4);
+  font-size: var(--texto-sm);
+  color: var(--color-verde);
+}
+
+.credito .insignia {
+  margin-block: var(--esp-8);
+}
+
+.credito__cita {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-2);
+}
+
+.portada-pie {
+  padding-block: var(--esp-24);
+  font-size: var(--texto-sm);
+  color: var(--color-blanco);
+  background: var(--color-navy);
+}
+
+.portada-pie__contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--esp-8);
+}
+
+@media (max-width: 960px) {
+  .heroe__contenido,
+  .creditos__contenido {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .roles__lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .heroe {
+    padding-block: var(--esp-48);
+  }
+
+  .roles__lista {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portada-encabezado .marca__nombre {
+    font-size: 18px;
+  }
+
+  .credito--creador {
+    align-items: flex-start;
+  }
+
+  .credito__foto {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+}
