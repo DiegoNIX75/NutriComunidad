@@ -1,0 +1,15 @@
+<header class="encabezado-panel">
+  <button class="boton-icono encabezado-panel__menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="barra-lateral" data-abrir-menu>☰</button>
+  <a class="marca" href="{{inicio}}" aria-label="NutriComunidad, ir al inicio de mi panel">
+    <img class="marca__emblema" src="{{emblema}}" alt="" width="40" height="40">
+    <span class="marca__nombre">Nutri<span>Comunidad</span></span>
+  </a>
+  <div class="encabezado-panel__usuario">
+    <span class="avatar" aria-hidden="true">{{iniciales}}</span>
+    <div class="encabezado-panel__datos">
+      <strong data-nombre-visible>{{nombre}}</strong>
+      <small>{{rol}}</small>
+    </div>
+    <button class="boton boton--contorno" type="button" data-cerrar-sesion>Cerrar sesión</button>
+  </div>
+</header>

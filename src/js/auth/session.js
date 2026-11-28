@@ -1,46 +1,60 @@
-import { USER_ROLES } from './credentials.js';
- 
-const STORAGE_PREFIX = 'nutricomunidad.';
-const SESSION_KEY = `${STORAGE_PREFIX}session`;
- 
-export const LOGIN_ROUTE = '/login.html';
- 
-export function saveSession({ role, username }) {
-  sessionStorage.setItem(SESSION_KEY, JSON.stringify({ role, username }));
-}
- 
-export function getSession() {
+/**
+ * Sesión en localStorage. El backend usa JWT (HMAC256): el token incluye sub (id de usuario),
+ * nombre, rol y exp. Aquí sólo se lee su contenido para la navegación; quien valida la firma y
+ * los permisos de cada petición es el backend.
+ */
+const CLAVE_TOKEN = 'nutricomunidad.token';
+const CLAVE_USUARIO = 'nutricomunidad.usuario';
+
+function decodificarCarga(token) {
   try {
-    const raw = sessionStorage.getItem(SESSION_KEY);
-    if (!raw) return null;
- 
-    const session = JSON.parse(raw);
-    return Object.values(USER_ROLES).includes(session.role) ? session : null;
+    const base64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+    const json = decodeURIComponent(
+      atob(base64)
+        .split('')
+        .map((c) => `%${c.charCodeAt(0).toString(16).padStart(2, '0')}`)
+        .join(''),
+    );
+    return JSON.parse(json);
   } catch {
     return null;
   }
 }
- 
 
-export function clearSession() {
-  Object.keys(sessionStorage)
-    .filter((key) => key.startsWith(STORAGE_PREFIX))
-    .forEach((key) => sessionStorage.removeItem(key));
+export function guardarSesion(token, usuario) {
+  localStorage.setItem(CLAVE_TOKEN, token);
+  localStorage.setItem(CLAVE_USUARIO, JSON.stringify(usuario));
 }
- 
 
-export function requireRole(role) {
-  const session = getSession();
- 
-  if (!session || session.role !== role) {
-    window.location.replace(LOGIN_ROUTE);
+export function actualizarUsuario(usuario) {
+  localStorage.setItem(CLAVE_USUARIO, JSON.stringify(usuario));
+}
+
+export function obtenerToken() {
+  return localStorage.getItem(CLAVE_TOKEN);
+}
+
+/** Devuelve { token, usuario, rol, expira } o null si no hay sesión válida (o ya expiró). */
+export function obtenerSesion() {
+  const token = obtenerToken();
+  if (!token) return null;
+
+  const carga = decodificarCarga(token);
+  if (!carga?.exp || carga.exp * 1000 <= Date.now()) {
+    cerrarSesionLocal();
     return null;
   }
- 
-  return session;
+
+  let usuario = null;
+  try {
+    usuario = JSON.parse(localStorage.getItem(CLAVE_USUARIO));
+  } catch {
+    usuario = null;
+  }
+  return { token, usuario, rol: carga.rol, idUsuario: Number(carga.sub), expira: new Date(carga.exp * 1000) };
 }
- 
-export function logout() {
-  clearSession();
-  window.location.assign(LOGIN_ROUTE);
+
+export function cerrarSesionLocal() {
+  localStorage.removeItem(CLAVE_TOKEN);
+  localStorage.removeItem(CLAVE_USUARIO);
 }
